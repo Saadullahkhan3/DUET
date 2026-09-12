@@ -1,0 +1,57 @@
+
+# Visual Studio Code
+.vscode/
+
+# C/C++ build outputs
+*.o
+*.obj
+*.out
+*.exe
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.dSYM/
+
+# Dependency and compiler-generated files
+*.d
+*.gch
+*.pch
+*.idb
+*.pdb
+compile_commands.json
+
+# Common build directories
+build/
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+
+# IDE and editor files
+.vs/
+*.user
+*.suo
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
