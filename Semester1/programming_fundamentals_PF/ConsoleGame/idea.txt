@@ -1,0 +1,47 @@
+Entire program Flow
+
+Start
+Rock Paper Scissor
+1. Play
+2. Show LeaderBoard
+3. Quit
+
+
+1 -> 
+Enter round type
+1. Endless -> set 9999999
+2. Specific number of rounds 
+    -> user choice 
+3. number of rounds (discarded)
+
+
+Change for loop condition
+if 1:
+    noOfRonsd = 99999999999999999999999999999999999999
+if 2:
+    Enter number of rounds (another menu)
+i <= noOfRounds 
+
+
+Enter Choice:
+1. Rock
+2. Paper
+3. Scissor
+4. main menu/quit
+
+    1,2,3 -> COmputer chocice -> Choose random choice -> Match choice -> Decide score (win, lose, draw)
+    4 -> Are you sure screen (y/n)
+        ->  Calculate score  - fancy summary
+
+
+
+
+score
+name
+
+player = score, name
+
+player.name
+player.score
+
+
