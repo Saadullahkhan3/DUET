@@ -19,7 +19,7 @@ struct Player
 const int MAX_ENTRIES = 3;
 const string FILE_NAME = "leaderboard.txt";
 const string retry_message = "\nInvalid Choice, Try Again\n";
-const string choices[3] = {"Rock", "Paper", "Scissor"};
+const string CHOICES[3] = {"Rock", "Paper", "Scissor"};
 
 bool quit_confirm()
 {
@@ -149,9 +149,9 @@ int manage_round(Player *player, int current_round_number)
     do
     {
         cout << "\nEnter Choice:\n";
-        cout << "1. Rock\n";
-        cout << "2. Paper\n";
-        cout << "3. Scissor\n";
+        cout << "1. " << CHOICES[0] << "\n";
+        cout << "2. " << CHOICES[1] << "\n";
+        cout << "3. " << CHOICES[2] << "\n";
         cout << "4. Go To Main Menu\n";
         cout << "Enter here: ";
         cin >> player->choice;
@@ -165,9 +165,9 @@ int manage_round(Player *player, int current_round_number)
             // example: HackerChanna(Rock) VS Computer(Scissor)
             cout << endl;
             cout << "~~~   ";
-            cout << player->name << "(" << choices[player->choice - 1] << ")";
+            cout << player->name << "(" << CHOICES[player->choice - 1] << ")";
             cout << " VS ";
-            cout << "Computer(" << choices[computer_choice - 1] << ")";
+            cout << "Computer(" << CHOICES[computer_choice - 1] << ")";
             cout << "   ~~~";
             cout << endl;
 
@@ -323,6 +323,7 @@ Player extract_player_from_row(string row)
 
 void sort_leaderboard(Player leaderboard[], int size)
 {
+    // Bubble Sort
     bool swapped;
 
     for (int i = 0; i < size - 1; i++)
@@ -356,7 +357,7 @@ void load_leaderboard(Player leaderboard[])
     }
 }
 
-void write_to_file(Player leaderboard[])
+void write_leaderboard(Player leaderboard[])
 {
     ofstream file(FILE_NAME);
 
@@ -421,6 +422,7 @@ int main()
     Player leaderboard[MAX_ENTRIES + 1];
     load_leaderboard(leaderboard);
 
+    // Sort leaderboard - incase file has unsorted leaderboard
     sort_leaderboard(leaderboard, MAX_ENTRIES);
 
     // Player
@@ -454,7 +456,7 @@ int main()
             sort_leaderboard(leaderboard, MAX_ENTRIES + 1);
 
             // Update Leaderboard File
-            write_to_file(leaderboard);
+            write_leaderboard(leaderboard);
         }
         else if (input_choice == 2)
         {
